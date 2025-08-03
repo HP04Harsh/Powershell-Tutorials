@@ -13,7 +13,6 @@ This repo is a **central hub** for all my PowerShell tutorials, practical projec
 | 📄 Automation Scripts  | Task scheduler, file cleanup, batch reporting, etc.       |
 | 🧑‍💼 Admin Utilities    | User management, login tracking, permission reports        |
 | 🖼 GUI Tools (WinForms) | User-friendly PowerShell GUI applications                |
-| 📊 Export Tools        | TXT, CSV, or Excel-based output reports                   |
 | 🎓 Learning Demos      | Hands-on mini tutorials with simple examples              |
 
 ---
