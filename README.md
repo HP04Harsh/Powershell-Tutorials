@@ -51,7 +51,7 @@ Install-Module ImportExcel -Scope CurrentUser
 ## **Github Clone**
 Feel free to fork, clone, or contribute with improvements or new script ideas.
 Just credit or star ⭐ the repo if it helps you.
-**git clone https://github.com/<your-username>/PowerShell-Projects.git**
+**git clone https://github.com/<your-username>/PowerShell-Tutorials.git**
 
 ## 💡 "**Automation is the future — PowerShell is the way.**"
 
