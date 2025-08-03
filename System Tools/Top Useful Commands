@@ -1,0 +1,100 @@
+Get-ComputerInfo                         # Get detailed system information
+Get-Host                                 # Get current PowerShell host info
+Get-WmiObject Win32_Processor            # Get CPU info
+Get-WmiObject Win32_LogicalDisk          # Get info about hard drives
+Get-WmiObject Win32_OperatingSystem      # Get OS info like name, version
+Get-WmiObject Win32_PhysicalMemory       # Get RAM details
+Get-WmiObject Win32_BIOS                 # Get BIOS version and info
+Get-WmiObject Win32_NetworkAdapter       # Get all network adapter info
+Get-CimInstance Win32_ComputerSystem     # Get system model, manufacturer
+Get-CimInstance Win32_VideoController    # Get GPU info
+Get-ChildItem                            # List files and folders (like dir/ls)
+Set-Location                             # Change directory (like cd)
+Get-Content file.txt                     # Read contents of a file
+Set-Content file.txt "Hello"            # Overwrite a file with text
+Add-Content file.txt "More"            # Append text to file
+Remove-Item file.txt                     # Delete a file
+Copy-Item source.txt dest.txt           # Copy file
+Move-Item file1.txt folder\             # Move file to folder
+New-Item file.txt                        # Create a new empty file
+New-Item -ItemType Directory folder      # Create a new folder
+Get-LocalUser                            # List local users
+Get-LocalGroup                           # List local groups
+New-LocalUser -Name "test" -NoPassword  # Create a local user
+Set-LocalUser -Name "test" -Password... # Set password for local user
+Add-LocalGroupMember -Group "Administrators" -Member "test"  # Add user to group
+Remove-LocalUser -Name "test"           # Delete local user
+Get-ADUser -Filter *                     # List all AD users (if domain joined)
+Enable-LocalUser -Name "test"           # Enable a user
+Disable-LocalUser -Name "test"          # Disable a user
+Rename-LocalUser -Name "old" -NewName "new" # Rename user
+Test-Connection google.com              # Ping a host
+Resolve-DnsName google.com              # DNS resolution for a domain
+Get-NetIPAddress                        # Get IP addresses
+Get-NetIPConfiguration                  # Get IP config like ipconfig
+Get-NetAdapter                          # View all network adapters
+Disable-NetAdapter -Name "Wi-Fi"       # Disable a network adapter
+Enable-NetAdapter -Name "Wi-Fi"        # Enable a network adapter
+Get-NetRoute                            # View routing table
+New-NetIPAddress ...                    # Set static IP (advanced)
+Test-NetConnection -ComputerName google.com # Test port, ping, and DNS
+Get-Process                             # List all running processes
+Start-Process notepad                   # Start Notepad
+Stop-Process -Name notepad              # Kill notepad process
+Get-Service                             # List all services
+Start-Service -Name wuauserv            # Start Windows Update service
+Stop-Service -Name spooler              # Stop Print Spooler
+Restart-Service -Name bits              # Restart BITS service
+Get-EventLog -LogName System            # View system event logs
+Get-Command                             # List all PowerShell commands
+Get-Help Get-Process                    # Get help for a command
+Get-Acl file.txt                        # View file permissions
+Set-Acl file.txt (Get-Acl other.txt)    # Copy ACL from one file to another
+icacls file.txt /grant User:F           # Grant full permission via CLI
+Get-ExecutionPolicy                     # View current execution policy
+Set-ExecutionPolicy RemoteSigned        # Change script running policy
+Get-Credential                          # Prompt for credentials
+Whoami                                  # Show current user
+netstat -ano                            # View network connections & PIDs
+Get-LocalGroupMember -Group "Administrators"  # Who's in the admin group?
+runas /user:Administrator cmd           # Run as another user
+if (Test-Path file.txt) { "Exists" }    # Conditional check
+foreach ($i in 1..5) { echo $i }        # Loop through numbers 1 to 5
+$files = Get-ChildItem                  # Save output to variable
+Function Greet { param($n) "Hello $n" } # Define function
+Switch ($x) { 1 {"One"} 2 {"Two"} }     # Switch case example
+$env:USERNAME                           # Get current username
+$date = Get-Date                        # Get current date/time
+Start-Sleep -Seconds 5                  # Wait 5 seconds
+$PSVersionTable                         # PowerShell version
+Read-Host "Enter Name"                  # Get user input
+Compress-Archive -Path file.txt -DestinationPath archive.zip    # Zip file
+Expand-Archive archive.zip -DestinationPath folder              # Unzip file
+Get-Item file.txt | Select-Object Length                        # File size
+Measure-Command { Get-Process }                                 # Measure time
+Out-File output.txt                                             # Save output to file
+Export-Csv data.csv -NoTypeInformation                         # Export to CSV
+Import-Csv data.csv                                             # Read CSV
+ConvertTo-Json                                                  # Convert object to JSON
+ConvertFrom-Json                                                # Parse JSON string
+Write-Output "Done"                                             # Print to console
+Enter-PSSession -ComputerName PC1          # Remote session
+Invoke-Command -ComputerName PC1 -ScriptBlock { hostname }  # Run remote command
+Enable-PSRemoting -Force                   # Enable PowerShell remoting
+Get-PSSession                              # List remote sessions
+Remove-PSSession -Id 1                     # End remote session
+Restart-Computer                           # Restart machine
+Shutdown /s /t 0                           # Shut down machine
+Install-WindowsFeature Web-Server          # Install IIS (on server)
+Get-WindowsFeature                         # List all Windows features
+Clear-Host                                 # Clear PowerShell screen
+Write-Host "Hello World" -ForegroundColor Cyan   # Colorful output
+Get-Random -Minimum 1 -Maximum 10                # Random number
+Get-HotFix                                        # View installed updates
+Get-ScheduledTask                                 # View scheduled tasks
+Register-ScheduledTask                            # Create scheduled task
+Get-Clipboard                                     # Read clipboard text
+Set-Clipboard "Copied!"                           # Copy to clipboard
+Out-GridView                                      # Show output in grid view
+Show-Command Get-Service                          # GUI for command input
+Start-Transcript -Path sessionlog.txt             # Start logging session
